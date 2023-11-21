@@ -31,7 +31,7 @@
   <svg width="{{.size}}" height="{{.size}}" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
   <path d="M111.842 50.748l-47.59-47.59A10.781 10.781 0 0 0 56.628 0H10.781C4.827 0 0 4.827 0 10.781v45.847a10.78 10.78 0 0 0 3.158 7.624l47.59 47.59c4.21 4.21 11.037 4.21 15.247 0l45.847-45.847c4.21-4.21 4.21-11.036 0-15.247zm-53.47 53.47l-47.59-47.59V10.781h45.846l47.59 47.59-45.845 45.847zM43.126 32.344c0 5.954-4.827 10.781-10.781 10.781-5.955 0-10.782-4.827-10.782-10.781 0-5.955 4.827-10.782 10.782-10.782 5.954 0 10.781 4.827 10.781 10.782z" />
   </svg> 
-	{{ elseif eq .iconName "github" }}
+	{{ else if eq .iconName "github" }}
   <img src="/svg/github-mark-white.svg" width="{{.size}}", height="{{.size}}", style="object-fit: contain;">
   {{ else if eq .iconName "linkedin" }}
   <img src="/svg/LinkedIn_icon.svg" width="{{.size}}", height="{{.size}}", style="object-fit: contain;">
