@@ -9,7 +9,7 @@
 {{ end }}
 <div class="portfolio-tags">
   {{ partial "svg" (dict "iconName" "calendar" "size" "18px")}}
-  <span>{{ .Params.jobDate.Format "January 01 2006" }}</span>
+  <span>{{ time.Format "January 01 2006" .Params.jobDate }}</span>
 </div>
 <p>{{ .Params.citation }}</p>
 {{ .Content }}
