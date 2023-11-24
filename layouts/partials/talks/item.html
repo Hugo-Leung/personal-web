@@ -1,0 +1,14 @@
+<div class="publication-list">
+  <a href="{{.Permalink}}">
+    <div class="publication-container">
+      <div class="img-overlay">
+      </div>
+      <h4><span>{{ .Title }}</span></h4>
+      <div class="portfolio-tags">
+        {{ partial "svg" (dict "iconName" "calendar" "size" "18px")}}
+        <span>{{ time.Format "January 01 2006" .Params.jobDate }}</span>
+      </div>
+      <p><span>{{ .Params.citation }}</span></p>
+    </div>
+  </a>
+</div>
