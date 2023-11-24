@@ -12,12 +12,12 @@
   </div>
 {{end}}
 
-{{ if .Params.techs }}
+{{ if .Params.tags }}
   <div class="techs portfolio-tags">
-    {{ partial "svg" (dict "iconName" "tech" "size" "18px")}}
+    {{ partial "svg" (dict "iconName" "tag" "size" "18px")}}
     <span>
-      {{ range $i, $e := .Params.techs }}
-        {{- with $.Site.GetPage "taxonomyTerm" (printf "techs/%s" ( urlize .)) -}}
+      {{ range $i, $e := .Params.tags }}
+        {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" ( urlize .)) -}}
           {{- if $i -}}<span>- </span>{{ end }}
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}

@@ -4,7 +4,7 @@ description:
 date: "{{ .Date }}"
 jobDate: 201
 work: []
-techs: []
+tags: []
 designs: []
 thumbnail: 
 projectUrl: 

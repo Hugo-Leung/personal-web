@@ -2,8 +2,8 @@
 
   {{ .Content }}
   <ul id="all-tags">
-    {{ range $name, $taxonomy := .Site.Taxonomies.techs }}
-        {{ with $.Site.GetPage (printf "/techs/%s" $name) }}
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
             <li><a href="{{ .Permalink }}">{{ $name | humanize }}</a></li>
         {{ end }}
     {{ end }}
