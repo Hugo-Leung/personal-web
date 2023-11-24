@@ -20,12 +20,15 @@ header
   .icon
     fill: $dark-blue
 
-#content:not(.portfolio)
+#content:not(.portfolio,.research-thumbnail)
   img
     width: 110%
     display: block
     margin: 0 -5%
 
+.research-thumbnail
+  width: 100%
+  max-width: $max-width-profile
 
 .published-date, .reading-time
   display: inline-block
@@ -39,7 +42,7 @@ header
 
 .portfolio
   img
-    max-width: $max-width-profile
+    max-width: 100%
     margin-bottom: $margin-blocks
     box-shadow: $box-shadow
 
@@ -94,7 +97,7 @@ header
 
     .portfolio-container
       position: relative
-      max-width: $max-width-content
+      max-width: $max-width-profile
       margin-bottom: $margin-blocks
 
       .portfolio-details
