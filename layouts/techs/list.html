@@ -2,7 +2,13 @@
 
 <h2>{{ .Data.Term | humanize }}</h2>
 {{ range .Data.Pages }}
-    {{ partial "portfolio/item" .}}
+	{{ if eq .Section "research" }}
+    {{ partial "research/item" .}}
+	{{ else if eq .Section "publications" }}
+    {{ partial "publications/item" .}}
+	{{ else if eq .Section "talks" }}
+    {{ partial "talks/item" .}}
+  {{ end }}
 {{ end }}
 
 {{ partial "footer" .}}
