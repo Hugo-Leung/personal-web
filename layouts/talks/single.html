@@ -1,17 +1,9 @@
 {{ partial "header" .}}
 
 <h1>{{ .Title }}</h1>
-{{ if .Params.projectUrl }}
-  <div class="portfolio-tags">
-    {{ partial "svg" (dict "iconName" "hyperlink" "size" "18px")}}
-    <a target="_blank" href="{{.Params.projectUrl}}">{{.Params.projectUrl}}</a>
-  </div>
-{{ end }}
-<div class="portfolio-tags">
-  {{ partial "svg" (dict "iconName" "calendar" "size" "18px")}}
-  <span>{{ time.Format "January 02 2006" .Params.jobDate }}</span>
+<div class="tags">
+  {{ partial "publications/tags" .}}
 </div>
-<p>{{ .Params.citation }}</p>
 {{ .Content }}
 
 {{ partial "footer" .}}
