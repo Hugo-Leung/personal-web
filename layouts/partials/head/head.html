@@ -5,5 +5,5 @@
   {{ partial "head/style" .}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/schema.html" . }}
-	{{ if .Params.math }}{{ partial "helpers/katex.html" . }}{{ end }}
+	{{ partial "helpers/katex.html" . }}
 </head>
