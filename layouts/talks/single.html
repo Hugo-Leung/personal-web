@@ -7,6 +7,10 @@
     <a target="_blank" href="{{.Params.projectUrl}}">{{.Params.projectUrl}}</a>
   </div>
 {{ end }}
+<div class="portfolio-tags">
+  {{ partial "svg" (dict "iconName" "calendar" "size" "18px")}}
+  <span>{{ .Params.jobDate.Format "January 01 2006" }}</span>
+</div>
 <p>{{ .Params.citation }}</p>
 {{ .Content }}
 
