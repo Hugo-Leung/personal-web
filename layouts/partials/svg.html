@@ -1,4 +1,4 @@
-<div class="icon" style="width: 35px;height: 35px;">
+<div class="icon" style="width: {{.size}};height: {{.size}};">
   {{ if eq .iconName "calendar"}}
 	{{ partial "inline-svg" (dict "iconName" "calendar-check-regular" "path" "fontawesome") }} 
   {{ else if eq .iconName "clock"}}
