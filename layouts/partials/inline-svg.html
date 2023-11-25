@@ -1,0 +1,4 @@
+{{- $fname:=print "svg/" .path "/" .iconName ".svg" -}}
+{{- $path:="<path" -}}
+{{- $fill:="<path fill=\"currentColor\"" -}}
+{{ replace (readFile $fname) $path $fill | safeHTML }}
