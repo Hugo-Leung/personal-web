@@ -2,7 +2,10 @@
 
   <h1 id="title"> {{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages.ByDate.Reverse }}
+  {{ range (.Paginate ( .Pages.ByDate.Reverse)).Pages }}
     {{ partial "publications/item" .}}
   {{ end }}
+	<div class="pagination-div">
+	{{ template "_internal/pagination.html" . }}
+	</div>
 {{ partial "footer" .}}

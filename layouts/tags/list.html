@@ -1,7 +1,7 @@
 {{ partial "header" .}}
 
 <h2>{{ .Data.Term | humanize }}</h2>
-{{ range .Data.Pages }}
+{{ range (.Paginate ( .Data.Pages)).Pages }}
 	{{ if eq .Section "research" }}
     {{ partial "research/item" .}}
 	{{ else if eq .Section "publications" }}
@@ -11,4 +11,7 @@
   {{ end }}
 {{ end }}
 
+	<div class="pagination-div">
+	{{ template "_internal/pagination.html" . }}
+	</div>
 {{ partial "footer" .}}
