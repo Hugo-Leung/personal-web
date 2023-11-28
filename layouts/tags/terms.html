@@ -1,7 +1,6 @@
 {{ partial "header" .}}
-<br/>
   {{ .Content }}
-  <ul id="all-tags">
+<ul id="all-tags", style="margin-top:0;">
     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
         {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
             <li><a href="{{ .Permalink }}">{{ $name | humanize }}</a></li>
