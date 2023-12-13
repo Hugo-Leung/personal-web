@@ -1,3 +1,7 @@
+The project is a fork of  [bjacquemet/personal-web](https://github.com/bjacquemet/personal-web) with some changes to suit my needs. 
+
+# Upstream README
+
 # Personal Web
 
 Personal Web is a simple Hugo template to build a personal website including portfolio and blog sections. It will mainly suit freelancers who want to showcase their work.
