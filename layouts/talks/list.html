@@ -2,7 +2,7 @@
 
   <h1 id="title"> {{ .Title }}</h1>
   {{ .Content }}
-  {{ range (.Paginate ( .Pages.ByDate.Reverse)).Pages }}
+  {{ range (.Paginate ( (.Pages.ByParam "jobDate").Reverse)).Pages }}
     {{ partial "talks/item" .}}
   {{ end }}
 	<div class="pagination-div">
