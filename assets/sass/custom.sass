@@ -284,4 +284,25 @@ figure
   .disabled, .active
     color: gray
 
+
+
+.pdf-container
+  .pdf-fallback
+    display: none;
+    text-align: center
+    padding: 10px
+    background: #f4f4f4
+    border: 1px solid #ddd
+    border-radius: 4px
+  .download-btn
+    display: inline-block
+    padding: 10px 20px
+    /*color: #fff*/
+    text-decoration: none
+    border-radius: 4px
+  @media (max-width: 850px)
+      embed
+        display: none
+      .pdf-fallback
+        display: block
  
