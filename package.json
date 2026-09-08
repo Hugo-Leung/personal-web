@@ -3,10 +3,12 @@
   "description": "Simple Personal website theme for Hugo",
   "version": "0.0.1",
   "author": {
-    "name": "Baptiste Jacquemet",
-    "url": "https://baptistej.com"
+    "name": "Ching Him Leung"
   },
-  "repository": "bjacquemet/personal-web",
+  "repository": "Hugo-Leung/personal-web",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "katex": "^0.18.5"
+  }
 }

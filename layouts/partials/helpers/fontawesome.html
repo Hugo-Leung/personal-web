@@ -1,0 +1,16 @@
+{{ $fontawsomeCSS := resources.Get "node_modules/@fortawesome/fontawesome-free/css/all.min.css" | fingerprint}}
+{{ $fontawsomeJS := resources.Get "node_modules/@fortawesome/fontawesome-free/js/all.min.js" | fingerprint}}
+
+<link rel="stylesheet"
+    href="{{ $fontawsomeCSS.Permalink }}"
+        integrity="{{ $fontawsomeCSS.Data.Integrity }}"
+        crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+<!--<script
+    defer
+    src="{{ $fontawsomeJS.Permalink }}"
+        integrity="{{ $fontawsomeJS.Data.Integrity }}"
+        crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    type="text/javascript"></script>
+-->
