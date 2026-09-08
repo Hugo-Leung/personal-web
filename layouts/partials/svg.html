@@ -1,23 +1,23 @@
 <div class="icon" style="width: {{.size}};height: {{.size}};">
   {{ if eq .iconName "calendar"}}
-	{{ partial "inline-svg" (dict "iconName" "calendar-check-regular" "path" "fontawesome") }} 
+  <i class="fa-regular fa-calendar-check" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i>
   {{ else if eq .iconName "clock"}}
-	{{ partial "inline-svg" (dict "iconName" "clock-regular" "path" "fontawesome") }} 
+  <i class="fa-regular fa-clock" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i>
   {{ else if eq .iconName "glasses" }}
-	{{ partial "inline-svg" (dict "iconName" "glasses-solid" "path" "fontawesome") }} 
+  <i class="fa-regular fa-glasses" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "pencil" }}
-	{{ partial "inline-svg" (dict "iconName" "pencil-solid" "path" "fontawesome") }} 
+  <i class="fa-solid fa-pencil" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "hyperlink" }}
-	{{ partial "inline-svg" (dict "iconName" "link-solid" "path" "fontawesome") }} 
+  <i class="fa-solid fa-link" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "tech" }}
-	{{ partial "inline-svg" (dict "iconName" "laptop-code-solid" "path" "fontawesome") }} 
+  <i class="fa-solid fa-laptop-code" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "read" }}
-	{{ partial "inline-svg" (dict "iconName" "book-open-solid" "path" "fontawesome") }} 
+  <i class="fa-solid fa-book-open" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "tag"}}
-	{{ partial "inline-svg" (dict "iconName" "tag-solid" "path" "fontawesome") }} 
+  <i class="fa-solid fa-tag" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "email"}}
-	{{ partial "inline-svg" (dict "iconName" "envelope-regular" "path" "fontawesome") }} 
-	{{ else if eq .iconName "github" }}
+	<i class="fa-regular fa-envelope"  style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
+  {{ else if eq .iconName "github" }}
   <img src="/svg/github-mark-white.svg" width="{{.size}}" height="{{.size}}" style="object-fit: contain;" alt="GitHub">
   {{ else if eq .iconName "linkedin" }}
   <img src="/svg/LinkedIn_icon.svg" width="{{.size}}" height="{{.size}}", style="object-fit: contain;" alt="LinkedIn">
