@@ -2,12 +2,12 @@
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/Hugo-Leung/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
     {{ partial "copyright" .}}
 		</div>
   </footer>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  {{ template "_internal/google_analytics.html" . }}
+  {{ partial "google_analytics.html" . }}
   <script type="text/javascript">
     document.querySelector('.mobile-header').addEventListener('click', function () {
       var om = document.querySelector(".overlay-menu");
