@@ -1,9 +1,11 @@
-=transform($property)
+@use "variables" as *
+
+@mixin transform($property)
   -webkit-transform: $property
   -ms-transform: $property
   transform: $property
 
-=transition($transition)
+@mixin transition($transition)
   -webkit-transition: $transition
   -moz-transition: $transition
   -ms-transition: $transition
@@ -11,19 +13,20 @@
   transition: $transition
 
 // MEDIA QUERIES
-=smartphone
-  @media (max-width: #{$tablet-width - 1px}), (max-height: #{$tablet-width - 1px})
+
+@mixin smartphone
+  @media (width < #{$tablet-width}) , (height < #{$tablet-width})
     @content
 
-=tablet
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) and (min-height: #{$tablet-width})
+@mixin tablet
+  @media (#{$tablet-width} < width < #{$desktop-width}) and (height > #{$tablet-width})
     @content
 
-=desktop
-  @media (min-width: #{$desktop-width}) and (min-height: #{$tablet-width})
+@mixin desktop
+  @media (width > #{$desktop-width}) and (height > #{$tablet-width})
     @content
 
-=rounded
+@mixin rounded
   width: 150px
   height: 150px
   border-radius: 50%

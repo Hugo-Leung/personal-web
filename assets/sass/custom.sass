@@ -1,3 +1,6 @@
+@use "variables" as *
+@use "mixins" as *
+
 .small
   font-size: $font-size_small
 
@@ -50,7 +53,7 @@ figure img
   margin-right: 20px
 
 .img-caption
-  margin-bottom: $margin-blocks/6 !important
+  margin-bottom: calc($margin-blocks/6) !important
 
 .portfolio
   img
@@ -59,7 +62,7 @@ figure img
     box-shadow: $box-shadow
 
   .rounded-img
-    +rounded
+    @include rounded
 
   .testimonial-list
     margin: 0 auto
@@ -73,7 +76,7 @@ figure img
         text-align: center
         font-weight: $font-weight_h1
         font-size: $font-size_main_large
-        margin-top: -2/3*$margin-blocks
+        margin-top: calc(-2/3*$margin-blocks)
       .testimonial-role
         font-weight: $font-weight_main
 
@@ -83,13 +86,13 @@ figure img
 
 
   .portfolio-tags
-    margin-top: $margin-blocks/5
+    margin-top: calc($margin-blocks/5)
     span
       font-weight: $font-weight_h1
     a
       overflow-wrap: break-word
   .tags
-    margin-bottom: $margin-blocks/3
+    margin-bottom: calc($margin-blocks/3)
 
 #content
   .portfolio-list
@@ -118,7 +121,7 @@ figure img
         width: 100%
         padding: 2em 1em
         color: $primary-color
-        +transition(opacity 0.4s ease)
+        @include transition(opacity 0.4s ease)
 
         p, h2
           text-align: center
@@ -135,7 +138,7 @@ figure img
         height: 100%
         width: 100%
         opacity: 0
-        +transition(0.4s ease)
+        @include transition(0.4s ease)
         background-color: $dark-blue
 
       &:hover
@@ -148,13 +151,13 @@ figure img
           position: absolute
           top: 50%
           left: 50%
-          +transform(translate(-50%, -50%))
+          @include transform(translate(-50%, -50%))
 
     img::hover
       linear-gradient: $dark-blue, $dark-blue
 
     .portfolio-container
-      +smartphone
+      @include smartphone
         img
           margin-bottom: 0
 
@@ -183,7 +186,7 @@ figure img
 
         &:hover
           .portfolio-details
-            +transform(none)
+            @include transform(none)
             position: relative
             left: 0
 
@@ -219,7 +222,7 @@ figure img
         height: 100%
         width: 100%
         opacity: 0
-        +transition(0.4s ease)
+            @include transition(0.4s ease)
         background-color: $dark-blue
         border-radius: 20px
 
@@ -229,7 +232,7 @@ figure img
         
 
     .publication-container
-      +smartphone
+      @include smartphone
         .img-overlay
           display: none
 
@@ -256,7 +259,7 @@ figure img
 
         &:hover
           .publication-container
-            +transform(none)
+            @include transform(none)
             position: relative
             left: 0
 
@@ -270,7 +273,7 @@ figure img
   margin-right: 20px
 
 .read-more
-  margin-top: -$margin-blocks/3
+  margin-top: calc(-1*$margin-blocks/3)
   text-align: right
   display: block
 

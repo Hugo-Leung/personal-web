@@ -1,5 +1,5 @@
-@import 'variables'
-@import 'mixins'
+@use "variables" as *
+@use "mixins" as *
 
 *
   box-sizing: border-box
@@ -15,11 +15,11 @@ body
   color: $dark-blue
   font-size: $font-size_main
 
-  +smartphone
+  @include smartphone
     line-height: $line-height_main_mobile
 
 ul
-  margin-top: -$margin-blocks/2
+  margin-top: calc(-1*$margin-blocks/2)
 
 li
   line-height: $line-height_main
@@ -33,14 +33,14 @@ p
   font-weight: $font-weight_main
   font-size: 1em
   margin-top: 0
-  margin-bottom: $margin-blocks/2
+  margin-bottom: calc($margin-blocks/2)
   line-height: $line-height_main
   text-align: justify
 
 h1, h2, h3, h4, h5
   font-family: $font-family_header
   letter-spacing: $letter-spacing_header
-  margin-bottom: $margin-blocks/3
+  margin-bottom: calc($margin-blocks/3)
   margin-top: $margin-blocks
   line-height: $line-height_h
 
@@ -58,7 +58,7 @@ h4
   font-weight: $font-weight_h4
 
 blockquote
-  margin: 0 $margin-blocks/6
+  margin: 0 calc($margin-blocks/6)
   font-size: 1em
   line-height: $line-height_main
   text-align: justify
@@ -80,7 +80,7 @@ header, #content
 figure
   margin: 0
   img
-    margin-bottom: $margin-blocks/5 !important
+    margin-bottom: calc($margin-blocks/5) !important
   figcaption
     p
       font-size: $font-size_medium
@@ -115,14 +115,14 @@ header
 
     .social-link a:focus, a:active, a:hover
       svg
-        +transition(fill 0.7s)
+        @include transition(fill 0.7s)
         fill: $grey-500
 
   a, a:link, a:visited
     color: white
     border-bottom: 0
     font-weight: $font-weight_main
-    +transition(all 0.25s)
+    @include transition(all 0.25s)
     line-height: $line-height_menu
     &:not(.social-link)
       border-bottom: $grey-100 1px dashed
@@ -139,12 +139,12 @@ header
     bottom: 140px
 
   .rounded-logo
-    +rounded
-    margin-bottom: 4/3*$margin-blocks
+    @include rounded
+    margin-bottom: calc(4/3*$margin-blocks)
     display: block
     box-shadow: $box-shadow
 
-  +tablet
+  @include tablet
     width: $sidebar-width-tablet
 
     .intro
@@ -153,14 +153,14 @@ header
     .socials
       max-width: $sidebar-width-tablet
 
-  +smartphone
+  @include smartphone
     position: relative
     width: 100%
     background: $dark-green !important
     display: block
     height: auto
     p
-      padding-top: $margin-blocks/3
+      padding-top: calc($margin-blocks/3)
 
     .socials
       padding: $padding-content_mobile
@@ -190,10 +190,10 @@ a, a:visited, a:link
   font-weight: 600
   border-bottom: $grey-600 1px dashed
   padding-bottom: 1px
-  +transition(all 0.2s)
+  @include transition(all 0.2s)
   svg
     fill: inherit
-    +transition(all 0.2s)
+    @include transition(all 0.2s)
 
 a:hover, a:focus, a:active
   color: $secondary-color
@@ -214,11 +214,11 @@ a:hover, a:focus, a:active
   display: block
   min-height: 88vh
 
-  +tablet
+  @include tablet
     width: $content-width-tablet
     margin-left: $sidebar-width-tablet
 
-  +smartphone
+  @include smartphone
     position: relative
     width: 100%
     margin-left: 0
@@ -236,11 +236,11 @@ footer
     margin: 0 auto
     display: block
 
-  +tablet
+  @include tablet
     width: $content-width-tablet
     left: $sidebar-width-tablet
 
-  +smartphone
+  @include smartphone
     position: relative
     width: 100%
     left: 0px
@@ -254,15 +254,15 @@ img.gopher
 
 // MOBILE ONLY
 
-+desktop
+@include desktop
   .overlay-menu, .mobile-menu, .hamburger
     display: none
 
-+tablet
+@include tablet
   .overlay-menu, .mobile-menu, .hamburger
     display: none
 
-+smartphone
+@include smartphone
   .mobile-header
     padding: $padding-mobile-header
     background: $dark-green
@@ -284,7 +284,7 @@ img.gopher
 
   .overlay-menu
     display: none
-    +transition(all 0.3s)
+    @include transition(all 0.3s)
     background: $dark-green !important
     width: 0%
     height: 0vh
@@ -309,14 +309,14 @@ img.gopher
       background-color: $grey-100
       margin-bottom: 5px
       position: relative
-      +transition(all 0.2s)
+      @include transition(all 0.2s)
     &.cross .bar
       transform-origin: 50% 50%
       &:nth-child(1)
-        +transform(rotate(45deg))
+        @include transform(rotate(45deg))
         top: 7px
       &:nth-child(3)
-        +transform(rotate(-45deg))
+        @include transform(rotate(-45deg))
       &:nth-child(2)
         display: none
 
