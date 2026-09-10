@@ -12,15 +12,15 @@
 
 // MEDIA QUERIES
 =smartphone
-  @media (max-width: #{$tablet-width - 1px})
+  @media (max-width: #{$tablet-width - 1px}), (max-height: #{$tablet-width - 1px})
     @content
 
 =tablet
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) and (min-height: #{$tablet-width})
     @content
 
 =desktop
-  @media (min-width: #{$desktop-width})
+  @media (min-width: #{$desktop-width}) and (min-height: #{$tablet-width})
     @content
 
 =rounded
