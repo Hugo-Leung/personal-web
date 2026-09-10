@@ -5,10 +5,9 @@ name = "Personal Web"
 license = "MIT"
 licenselink = "https://github.com/Hugo-Leung/personal-web/blob/master/LICENSE"
 description = "Personal Web is a simple Hugo template to build a personal website including portfolio and blog sections. It will mainly suit freelancers who want to showcase their work."
-homepage = "https://personal-web-example.netlify.com/"
+homepage = "https://github.com/Hugo-Leung/personal-web"
 tags = ["portfolio", "blog", "post", "personal", "freelancer", "developer"]
 features = []
-min_version = "0.41"
 
 [author]
   name = "Ching Him Leung"
