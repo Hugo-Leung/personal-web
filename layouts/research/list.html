@@ -7,6 +7,6 @@
     {{ partial "research/item" .}}
   {{ end }}
 	<div class="pagination-div">
-	{{ template "_internal/pagination.html" . }}
+	{{ partial "pagination.html" . }}
 	</div>
-{{ partial "footer" .}}
+{{ partialCached "footer" .}}

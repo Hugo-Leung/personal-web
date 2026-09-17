@@ -1,4 +1,4 @@
-<header style="{{ partial "sidebar/style" . | safeCSS }}">
+<header style="{{ partialCached "sidebar/style" . | safeCSS }}">
   <div class="intro">
     <div class="logo-container">
       <a href="/">
@@ -8,7 +8,7 @@
     <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe" | emojify }}</h2>
     <h3>{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h3>
     <div class="menu">
-      {{ partial "sidebar/menu" . }}
+      {{ partialCached "sidebar/menu" . }}
       {{ if .Site.Params.contact.email }}
         {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
         <p>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="socials">
-      {{ partial "sidebar/social" .}}
+      {{ partialCached "sidebar/social" .}}
   </div>
 </header>
 
@@ -45,7 +45,7 @@
       <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe" | emojify }}</h2>
       <h3>{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h3>
       <div class="menu">
-        {{ partial "sidebar/menu" . }}
+        {{ partialCached "sidebar/menu" . }}
         {{ if .Site.Params.contact.email }}
           {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
           <p>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="socials">
-        {{ partial "sidebar/social" .}}
+        {{ partialCached "sidebar/social" .}}
     </div>
   </header>
 </div>

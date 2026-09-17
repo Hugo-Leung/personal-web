@@ -2,11 +2,11 @@
   <title>{{.Params.title}} - {{ $.Site.Title}}</title>
   <link rel='canonical' href='{{ .Permalink }}' />
   {{ partial "head/meta" .}}
-  {{ partial "head/style" .}}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/schema.html" . }}
+  {{ partialCached "head/style" .}}
+  {{ partial "opengraph.html" . }}
+  {{ partial "schema.html" . }}
   {{ if .Param "math" }}
-	  {{ partial "helpers/katex.html" . }}
+	  {{ partialCached "helpers/katex.html" . }}
   {{ end }} 
-  {{ partial "helpers/fontawesome.html" . }}
+  {{ partialCached "helpers/fontawesome.html" . }}
 </head>
