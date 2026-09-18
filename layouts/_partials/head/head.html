@@ -5,6 +5,8 @@
   {{ partialCached "head/style" .}}
   {{ partial "opengraph.html" . }}
   {{ partial "schema.html" . }}
+  {{ partialCached "head/font.html" . }}
+
   {{ if .Param "math" }}
 	  {{ partialCached "helpers/katex.html" . }}
   {{ end }} 
