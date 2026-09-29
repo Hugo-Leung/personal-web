@@ -1,3 +1,4 @@
 background-image:
-linear-gradient( to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.01) ),
+linear-gradient(
+      {{ .Site.Params.sidebar.gradientOverlay | default " rgba(0,0,0,0.4),rgba(0,0,0,0.4)" | safeCSS }}),
 url('{{ .Site.Params.sidebar.backgroundImage | default "images/default-sidebar.jpg" | absURL }}')
