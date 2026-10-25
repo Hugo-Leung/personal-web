@@ -16,7 +16,7 @@
   {{ else if eq .iconName "tag"}}
   <i class="fa-solid fa-tag" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "email"}}
-	<i class="fa-regular fa-envelope"  style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
+	<i class="fa-regular fa-envelope" aria-label="Email" style="width: {{.size}}; height: {{.size}}; font-size: {{.size}};"></i> 
   {{ else if eq .iconName "github" }}
   <img src="/svg/github-mark-white.svg" width="{{.size}}" height="{{.size}}" style="object-fit: contain;" alt="GitHub">
   {{ else if eq .iconName "linkedin" }}
