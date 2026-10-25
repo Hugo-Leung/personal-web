@@ -15,15 +15,15 @@
 // MEDIA QUERIES
 
 @mixin smartphone
-  @media (width < #{$tablet-width}) , (height < #{$tablet-width})
+  @media (width < #{$tablet-width})
     @content
 
 @mixin tablet
-  @media (#{$tablet-width} < width < #{$desktop-width}) and (height > #{$tablet-width})
+  @media (#{$tablet-width} < width < #{$desktop-width}) 
     @content
 
 @mixin desktop
-  @media (width > #{$desktop-width}) and (height > #{$tablet-width})
+  @media (width > #{$desktop-width}) 
     @content
 
 @mixin rounded

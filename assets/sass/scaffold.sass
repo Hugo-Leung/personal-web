@@ -88,10 +88,18 @@ figure
 
 header
   width: $sidebar-width
+  height: 100vh
+  overflow-y: auto
   background-size: cover
   background-position: top center
   position: fixed
+  top: 0
   color: $grey-100
+
+  .sidebar-content
+    min-height: max($sidebar-min-height, 100%)
+    display: flex
+    flex-direction: column
 
   h2
     font-size: calc(0.5 * #{$font-size_h2} + 0.5 * #{$font-size_h1})
@@ -104,8 +112,11 @@ header
 
   .socials
     padding: $padding-content
-    bottom: 0px
-    position: fixed
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
     border: 0
     max-width: $sidebar-width
 
@@ -135,8 +146,8 @@ header
 
   .intro
     padding: $padding-content
-    position: absolute
-    bottom: 140px
+    position: relative
+    margin-top: auto
 
   .rounded-logo
     @include rounded
@@ -147,9 +158,6 @@ header
   @include tablet
     width: $sidebar-width-tablet
 
-    .intro
-      bottom: 150px
-
     .socials
       max-width: $sidebar-width-tablet
 
@@ -159,12 +167,18 @@ header
     background: $dark-green !important
     display: block
     height: auto
+    min-height: 0
     p
       padding-top: calc($margin-blocks/3)
+
+    .sidebar-content
+      min-height: 0
+      display: block
 
     .socials
       padding: $padding-content_mobile
       position: relative
+      margin-top: 0
       max-width: inherit
 
     .rounded-logo
@@ -172,9 +186,9 @@ header
       margin: 0 auto
 
     .intro
-      bottom: inherit
       display: block
       position: relative
+      margin: 0
 
 #content, .breadcrumb
   max-width: $max-width-content
