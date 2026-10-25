@@ -1,7 +1,7 @@
 {{ $opts := dict
   "transpiler" "dartsass"
 }}
-{{ $style := resources.Get "sass/style.sass" | toCSS $opts | minify | fingerprint }}
+{{ $style := resources.Get "sass/style.sass" | css.Sass $opts | minify | fingerprint }}
 {{ $syntax := resources.Get "syntax.css" | minify }}
 
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
