@@ -27,16 +27,16 @@
   </div>
 </header>
 
-<div class="mobile-header">
-  <p> {{ .Site.Title }} </p>
-  <div class="hamburger">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-</div>
+<button class="mobile-header" type="button" aria-label="Toggle navigation" aria-controls="mobile-navigation" aria-expanded="false">
+  <span class="mobile-header-title">{{ .Site.Title }}</span>
+  <span class="hamburger" aria-hidden="true">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </span>
+</button>
 
-<div class="overlay-menu">
+<div class="overlay-menu" id="mobile-navigation">
   <header>
     <div class="sidebar-content">
       <div class="intro">

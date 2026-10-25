@@ -269,7 +269,7 @@ img.gopher
 // MOBILE ONLY
 
 @include desktop
-  .overlay-menu, .mobile-menu, .hamburger
+  .overlay-menu, .mobile-menu, .hamburger, .mobile-header
     display: none
 
 @include tablet
@@ -278,14 +278,19 @@ img.gopher
 
 @include smartphone
   .mobile-header
+    display: block
+    position: relative
+    width: 100%
     padding: $padding-mobile-header
     background: $dark-green
     color: $grey-100
-    
-    p
-      font-size: $font-size_h2
-      text-align: center
-      margin: 0
+    border: 0
+    font: inherit
+    text-align: center
+    cursor: pointer
+
+  .mobile-header-title
+    font-size: $font-size_h2
   header
     display: none
   .overlay-menu, .mobile-menu
@@ -318,6 +323,7 @@ img.gopher
     z-index: 100
 
     .bar
+      display: block
       width: 22px
       height: 2px
       background-color: $grey-100

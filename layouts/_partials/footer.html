@@ -8,19 +8,22 @@
   </footer>
   {{ partial "google_analytics.html" . }}
   <script type="text/javascript">
-    document.querySelector('.mobile-header').addEventListener('click', function () {
+    document.querySelector('.mobile-header').addEventListener('click', function (event) {
+      var button = event.currentTarget;
       var om = document.querySelector(".overlay-menu");
       if (document.querySelector('.hamburger').classList.contains("cross")) {
         document.querySelector('.hamburger').classList.remove("cross");
         om.style.display = "none";
         om.style.width = "0%";
         om.style.height = "0%";
+        button.setAttribute("aria-expanded", "false");
       }
       else {
         document.querySelector('.hamburger').classList.add("cross");
         om.style.width = "100%";
         om.style.height = "100vh";
         om.style.display = "block";
+        button.setAttribute("aria-expanded", "true");
       }
     });
   </script>
