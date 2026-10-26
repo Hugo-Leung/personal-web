@@ -17,11 +17,11 @@
 
 header
   .icon
-    fill: white
+    fill: var(--color-sidebar-icon)
     margin-right: 10px
 #content
   .icon
-    fill: $dark-blue
+    fill: var(--color-text)
 
 #content:not(.portfolio,.research-thumbnail)
   img :not(figure)
@@ -30,7 +30,7 @@ header
     margin: 0 -5%
 
 figure
-  border: 1px #cccccc solid
+  border: 1px var(--color-border-subtle) solid
   padding: 4px
   margin: 0 -5%
   border-radius: 4px
@@ -59,7 +59,7 @@ figure img
   img
     max-width: 100%
     margin-bottom: $margin-blocks
-    box-shadow: $box-shadow
+    box-shadow: 0 0 5px var(--color-shadow)
 
   .rounded-img
     @include rounded
@@ -107,7 +107,7 @@ figure img
       max-width: 100%
       border-radius: 2px
       display: block
-      box-shadow: $box-shadow
+      box-shadow: 0 0 5px var(--color-shadow)
       margin: inherit
 
     .portfolio-container
@@ -120,7 +120,7 @@ figure img
         display: none
         width: 100%
         padding: 2em 1em
-        color: $primary-color
+        color: var(--color-overlay-text)
         @include transition(opacity 0.4s ease)
 
         p, h2
@@ -139,7 +139,7 @@ figure img
         width: 100%
         opacity: 0
         @include transition(0.4s ease)
-        background-color: $dark-blue
+        background-color: var(--color-overlay)
 
       &:hover
         .img-overlay
@@ -154,7 +154,7 @@ figure img
           @include transform(translate(-50%, -50%))
 
     img::hover
-      linear-gradient: $dark-blue, $dark-blue
+      linear-gradient: var(--color-overlay), var(--color-overlay)
 
     .portfolio-container
       @include smartphone
@@ -169,14 +169,14 @@ figure img
           opacity: 1
           width: 100%
           padding: 0px
-          color: $grey-900
+          color: var(--color-text)
 
           h2
             font-size: $font-size_h3
             line-height: $line-height_main
 
             span
-              background-image: linear-gradient(180deg, transparent 60%, $primary-color 0)
+              background-image: linear-gradient(180deg, transparent 60%, var(--color-highlight) 0)
               padding: 0 0.2em
 
           p, h2
@@ -203,7 +203,7 @@ figure img
       max-width: $max-width-content
       margin-bottom: $margin-blocks
       border-radius: 20px
-      box-shadow: $box-shadow
+      box-shadow: 0 0 5px var(--color-shadow)
       margin: inherit
       padding: 10px
       p, h4
@@ -223,7 +223,7 @@ figure img
         width: 100%
         opacity: 0
             @include transition(0.4s ease)
-        background-color: $dark-blue
+        background-color: var(--color-overlay)
         border-radius: 20px
 
       &:hover
@@ -241,14 +241,14 @@ figure img
           opacity: 1
           width: 100%
           padding: 10px
-          color: $grey-900
+          color: var(--color-text)
 
           h4
             font-size: $font-size_h4
             line-height: $line-height_main
 
             span
-              background-image: linear-gradient(180deg, transparent 60%, $primary-color 0)
+              background-image: linear-gradient(180deg, transparent 60%, var(--color-highlight) 0)
               padding: 0 0.2em
 
           p, h4
@@ -289,7 +289,7 @@ figure img
     list-style: outside none none
     margin-left: 10px 
   .disabled, .active
-    color: gray
+    color: var(--color-text-muted)
 
 
 
@@ -298,8 +298,8 @@ figure img
     display: none
     text-align: center
     padding: 10px
-    background: #f4f4f4
-    border: 1px solid #ddd
+    background: var(--color-page)
+    border: 1px solid var(--color-border-subtle)
     border-radius: 4px
   .download-btn
     display: inline-block

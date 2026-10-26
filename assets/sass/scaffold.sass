@@ -1,18 +1,77 @@
 @use "variables" as *
 @use "mixins" as *
 
+@mixin dark-theme
+  color-scheme: dark
+  --color-page: #{$primary-color-dark}
+  --color-surface: #{$grey-900} hsl(220, 17%, 18%)
+  --color-text: #{$light-blue}
+  --color-text-muted: #{$grey-300}
+  --color-border: #{$grey-400}
+  --color-border-subtle: #{$grey-600}
+  --color-selection: #{$grey-700}
+  --color-selection-text: #{$grey-100}
+  --color-quote: #{$grey-600}
+  --color-accent: #{$secondary-color}
+  --color-overlay: #{$light-blue}
+  --color-overlay-text: #fff
+  --color-highlight: #{$primary-color}
+  --color-shadow: #{$light-blue}
+  --color-sidebar-background: #{$dark-green}
+  --color-sidebar-text: #{$grey-100}
+  --color-sidebar-link: #fff
+  --color-sidebar-link-hover: #{$secondary-color}
+  --color-sidebar-border: #{$grey-100}
+  --color-sidebar-icon: #fff
+  --color-sidebar-icon-hover: #{$grey-500}
+  --color-footer-background: #{$footer-background-color-dark}
+  --color-footer-text: #{$grey-100}
+
+:root
+  color-scheme: light
+  --color-page: #{$primary-color}
+  --color-surface: #fff
+  --color-text: #{$dark-blue}
+  --color-text-muted: #{$grey-700}
+  --color-border: #{$grey-600}
+  --color-border-subtle: #{$grey-400}
+  --color-selection: #{$grey-300}
+  --color-selection-text: #{$grey-900}
+  --color-quote: #{$grey-400}
+  --color-accent: #{$secondary-color}
+  --color-overlay: #{$dark-blue}
+  --color-overlay-text: #fff
+  --color-highlight: #{$primary-color}
+  --color-shadow: #{$dark-blue}
+  --color-sidebar-background: #{$light-green}
+  --color-sidebar-text: #{$grey-100}
+  --color-sidebar-link: #fff
+  --color-sidebar-link-hover: #{$secondary-color}
+  --color-sidebar-border: #{$grey-100}
+  --color-sidebar-icon: #fff
+  --color-sidebar-icon-hover: #{$grey-500}
+  --color-footer-background: #{$footer-background-color}
+  --color-footer-text: #{$grey-100}
+
+:root[data-theme="dark"]
+  @include dark-theme
+
+@media (prefers-color-scheme: dark)
+  :root:not([data-theme="light"])
+    @include dark-theme
+
 *
   box-sizing: border-box
 
 html
-  background-color: $primary-color
+  background-color: var(--color-page)
 
 body
-  background-color: white
+  background-color: var(--color-surface)
   margin: 0
   min-height: 100%
   font-family: $font-family_main
-  color: $dark-blue
+  color: var(--color-text)
   font-size: $font-size_main
 
   @include smartphone
@@ -25,8 +84,8 @@ li
   line-height: $line-height_main
 
 p::selection
-  background-color: $grey-300
-  color: $grey-900
+  background-color: var(--color-selection)
+  color: var(--color-selection-text)
 
 p
   display: block
@@ -69,7 +128,7 @@ blockquote
     position: absolute
     top: 0.15em
     left: -0.18em
-    color: $grey-400
+    color: var(--color-quote)
     font-size: 7em
     z-index: -1
     font-style: italic
@@ -92,9 +151,10 @@ header
   overflow-y: auto
   background-size: cover
   background-position: top center
+  background-color: var(--color-sidebar-background)
   position: fixed
   top: 0
-  color: $grey-100
+  color: var(--color-sidebar-text)
 
   .sidebar-content
     min-height: max($sidebar-min-height, 100%)
@@ -122,27 +182,27 @@ header
 
     .social-link a, a:visited, a:focus, a:active
       svg
-        fill: white
+        fill: var(--color-sidebar-icon)
 
     .social-link a:focus, a:active, a:hover
       svg
         @include transition(fill 0.7s)
-        fill: $grey-500
+        fill: var(--color-sidebar-icon-hover)
 
   a, a:link, a:visited
-    color: white
+    color: var(--color-sidebar-link)
     border-bottom: 0
     font-weight: $font-weight_main
     @include transition(all 0.25s)
     line-height: $line-height_menu
     &:not(.social-link)
-      border-bottom: $grey-100 1px dashed
+      border-bottom: var(--color-sidebar-border) 1px dashed
 
   a:hover, a:focus, a:active
-    color: $secondary-color
+    color: var(--color-sidebar-link-hover)
     &:not(.social-link)
       font-weight: $font-weight_h1
-      border-bottom: $grey-100 1px dashed
+      border-bottom: var(--color-sidebar-border) 1px dashed
 
   .intro
     padding: $padding-content
@@ -153,7 +213,7 @@ header
     @include rounded
     margin-bottom: calc(4/3*$margin-blocks)
     display: block
-    box-shadow: $box-shadow
+    box-shadow: 0 0 5px var(--color-shadow)
 
   @include tablet
     width: $sidebar-width-tablet
@@ -164,7 +224,7 @@ header
   @include smartphone
     position: relative
     width: 100%
-    background: $dark-green !important
+    background: var(--color-sidebar-background) !important
     display: block
     height: auto
     min-height: 0
@@ -195,6 +255,39 @@ header
   margin: 0 auto
   display: block
 
+.page-header
+  max-width: $max-width-content
+  margin: 0 auto $margin-blocks
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 1em
+
+  .breadcrumb
+    margin: 0
+
+.theme-toggle
+  flex: 0 0 auto
+  width: 40px
+  height: 40px
+  padding: 0
+  border: 1px solid var(--color-border)
+  border-radius: 50%
+  background: transparent
+  color: var(--color-text)
+  font: inherit
+  cursor: pointer
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+  [hidden]
+    display: none
+
+  &:focus-visible
+    outline: 2px solid currentColor
+    outline-offset: 2px
+
 a
   line-height: $line-height_main+0.1
 
@@ -202,7 +295,7 @@ a, a:visited, a:link
   text-decoration: none
   color: inherit
   font-weight: 600
-  border-bottom: $grey-600 1px dashed
+  border-bottom: var(--color-border) 1px dashed
   padding-bottom: 1px
   @include transition(all 0.2s)
   svg
@@ -210,13 +303,13 @@ a, a:visited, a:link
     @include transition(all 0.2s)
 
 a:hover, a:focus, a:active
-  color: $secondary-color
+  color: var(--color-accent)
   text-decoration: none
   font-weight: 600
-  border-bottom: $grey-600 1px dashed
+  border-bottom: var(--color-border) 1px dashed
   padding-bottom: 1px
   svg
-    fill: $secondary-color
+    fill: var(--color-accent)
 
 .content-wrapper
   padding: $padding-content
@@ -241,8 +334,8 @@ footer
   position: absolute
   width: $content-width
   left: $sidebar-width
-  background-color: $footer-background-color
-  color: $grey-100
+  background-color: var(--color-footer-background)
+  color: var(--color-footer-text)
   padding: $padding-content
 
   .footer-wrapper
@@ -282,8 +375,8 @@ img.gopher
     position: relative
     width: 100%
     padding: $padding-mobile-header
-    background: $dark-green
-    color: $grey-100
+    background: var(--color-sidebar-background)
+    color: var(--color-sidebar-text)
     border: 0
     font: inherit
     text-align: center
@@ -304,7 +397,7 @@ img.gopher
   .overlay-menu
     display: none
     @include transition(all 0.3s)
-    background: $dark-green !important
+    background: var(--color-sidebar-background) !important
     width: 0%
     height: 0vh
     position: absolute
@@ -326,7 +419,7 @@ img.gopher
       display: block
       width: 22px
       height: 2px
-      background-color: $grey-100
+      background-color: var(--color-sidebar-text)
       margin-bottom: 5px
       position: relative
       @include transition(all 0.2s)

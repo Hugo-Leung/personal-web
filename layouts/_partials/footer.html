@@ -7,6 +7,8 @@
 		</div>
   </footer>
   {{ partial "google_analytics.html" . }}
+  {{ $themeScript := resources.Get "js/theme.js" | minify | fingerprint }}
+  <script src="{{ $themeScript.RelPermalink }}" integrity="{{ $themeScript.Data.Integrity }}" defer></script>
   <script type="text/javascript">
     document.querySelector('.mobile-header').addEventListener('click', function (event) {
       var button = event.currentTarget;
