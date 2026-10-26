@@ -4,7 +4,7 @@
 @mixin dark-theme
   color-scheme: dark
   --color-page: #{$primary-color-dark}
-  --color-surface: #{$grey-900} hsl(220, 17%, 18%)
+  --color-surface: #{$grey-1000} 
   --color-text: #{$light-blue}
   --color-text-muted: #{$grey-300}
   --color-border: #{$grey-400}
@@ -14,8 +14,8 @@
   --color-quote: #{$grey-600}
   --color-accent: #{$secondary-color}
   --color-overlay: #{$light-blue}
-  --color-overlay-text: #fff
-  --color-highlight: #{$primary-color}
+  --color-overlay-text: #{$grey-900} 
+  --color-highlight: #{$primary-color-dark}
   --color-shadow: #{$light-blue}
   --color-sidebar-background: #{$dark-green}
   --color-sidebar-text: #{$grey-100}
@@ -69,7 +69,9 @@ html
 body
   background-color: var(--color-surface)
   margin: 0
-  min-height: 100%
+  min-height: 100vh
+  display: flex
+  flex-direction: column
   font-family: $font-family_main
   color: var(--color-text)
   font-size: $font-size_main
@@ -316,10 +318,11 @@ a:hover, a:focus, a:active
   position: static
   width: $content-width
   margin-left: $sidebar-width
+  flex: 1 0 auto
   float: none
   clear: none
   display: block
-  min-height: 88vh
+  min-height: 0
 
   @include tablet
     width: $content-width-tablet
@@ -331,9 +334,9 @@ a:hover, a:focus, a:active
     margin-left: 0
 
 footer
-  position: absolute
+  position: relative
   width: $content-width
-  left: $sidebar-width
+  margin-left: $sidebar-width
   background-color: var(--color-footer-background)
   color: var(--color-footer-text)
   padding: $padding-content
@@ -345,12 +348,12 @@ footer
 
   @include tablet
     width: $content-width-tablet
-    left: $sidebar-width-tablet
+    margin-left: $sidebar-width-tablet
 
   @include smartphone
     position: relative
     width: 100%
-    left: 0px
+    margin-left: 0
 
   p
     margin-bottom: 0

@@ -17,6 +17,7 @@ function updateThemeToggle() {
 themeToggle.addEventListener('click', function () {
   var theme = isDarkTheme() ? 'light' : 'dark';
   root.dataset.theme = theme;
+  localStorage.setItem('personal-web-theme', theme);
   updateThemeToggle();
 });
 

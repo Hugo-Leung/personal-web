@@ -2,6 +2,14 @@
   <title>{{.Params.title}} - {{ $.Site.Title}}</title>
   <link rel='canonical' href='{{ .Permalink }}' />
   {{ partial "head/meta" .}}
+  <script>
+    (function () {
+      var theme = localStorage.getItem('personal-web-theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    })();
+  </script>
   {{ partialCached "head/style" .}}
   {{ partial "opengraph.html" . }}
   {{ partial "schema.html" . }}
