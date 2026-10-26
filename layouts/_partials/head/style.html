@@ -9,3 +9,6 @@
 {{ if .Site.Params.assets.customCSS }}
   <link rel="stylesheet" href="{{ .Site.Params.assets.customCSS }}" media="screen">
 {{ end }}
+
+{{ $printstyle := resources.Get "sass/print.sass" | css.Sass $opts | minify | fingerprint }}
+<link href="{{ $printstyle.RelPermalink }}" media="print" rel="stylesheet" />

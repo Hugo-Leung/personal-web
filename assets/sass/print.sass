@@ -1,0 +1,139 @@
+@media print
+  // Hide all screen-only navigation, controls, and layout chrome
+  header,
+  .mobile-header,
+  .overlay-menu,
+  .mobile-menu,
+  .hamburger,
+  .theme-toggle,
+  .breadcrumb,
+  .socials,
+  .menu,
+  .rounded-logo
+    display: none !important
+
+  // Reset the page to a normal document flow
+  html,
+  body
+    background: #fff !important
+    color: #000 !important
+    margin: 0
+    padding: 0
+    width: auto
+    max-width: none
+    overflow: visible
+
+  body
+    display: block
+    min-height: auto
+    font-size: 12pt
+    line-height: 1.5
+    color: #000
+
+  // Remove the fixed sidebar and desktop layout offsets
+  .content-wrapper,
+  #content,
+  .page-header,
+  footer
+    width: auto
+    max-width: none
+    margin: 0
+    padding: 0
+    position: static
+    float: none
+    clear: none
+    left: auto
+    right: auto
+
+  .content-wrapper
+    margin-left: 0 !important
+    display: block
+
+  .portfolio-tags
+    display: flex
+    align-items: center
+    gap: 0.45rem
+    flex-wrap: wrap
+
+    .icon
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      flex: 0 0 auto
+
+  footer
+    margin-left: 0 !important
+    width: auto !important
+    background: transparent !important
+    color: #000 !important
+    padding: 1rem 0 0 0
+
+  // Remove background-based styling that won't print well
+  *,
+  *::before,
+  *::after
+    box-shadow: none !important
+    text-shadow: none !important
+    background: transparent !important
+    background-image: none !important
+    color-adjust: exact !important
+
+  // Make typography readable on paper
+  p,
+  li,
+  blockquote,
+  figcaption
+    color: #000
+    text-align: left
+
+  h1, h2, h3, h4, h5
+    color: #000
+    page-break-after: avoid
+    break-after: avoid
+
+  p,
+  figure,
+  blockquote,
+  table,
+  img
+    break-inside: avoid
+    page-break-inside: avoid
+
+  img
+    max-width: 100%
+    height: auto
+
+  // Better link behavior for print
+  a,
+  a:visited,
+  a:link
+    color: #000
+    text-decoration: underline
+    border-bottom: 1px solid #000
+    padding-bottom: 0
+
+  a::after
+    content: " (" attr(href) ")"
+    font-size: 0.85em
+    font-weight: normal
+    color: #444
+
+  // Remove any weird quote decorations
+  blockquote::before
+    content: none !important
+  //remove embedded PDF as it is always never printed right
+  .pdf-container
+    embed, object, iframe
+      display: none !important
+
+  .pdf-fallback
+    display: block !important
+    margin: 1rem 0
+
+    a::after
+      content: " (" attr(href) ")"
+      font-size: 0.9em
+    
+  // Page sizing
+  @page
+    margin: 1.5cm 1.25cm
