@@ -6,15 +6,15 @@
           <img src='{{ .Site.Params.sidebar.logo | default "images/edna-west.jpg" | absURL }}' alt="Profile {{ .Site.Title }}" class="rounded-logo">
         </a>
       </div>
-      <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe" | emojify }}</h2>
-      <h3>{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h3>
+      <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe"  }}</h2>
+      <h3>{{ .Site.Params.intro.sub | default "This is my personal website"  }}</h3>
       <div class="menu">
         {{ partialCached "sidebar/menu" . }}
         {{ if .Site.Params.contact.email }}
           {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
           <p>
               <a href="{{ $email }}" target="_blank" rel="external">
-                  {{ .Site.Params.contact.text | emojify }}
+                  {{ .Site.Params.contact.text  }}
               </a>
           </p>
         {{ end }}
