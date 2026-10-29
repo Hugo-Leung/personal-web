@@ -153,8 +153,8 @@ figure img
           left: 50%
           @include transform(translate(-50%, -50%))
 
-    img::hover
-      linear-gradient: var(--color-overlay), var(--color-overlay)
+    img:hover
+      background-image: linear-gradient( var(--color-overlay), var(--color-overlay))
 
     .portfolio-container
       @include smartphone
@@ -222,7 +222,7 @@ figure img
         height: 100%
         width: 100%
         opacity: 0
-            @include transition(0.4s ease)
+        @include transition(0.4s ease)
         background-color: var(--color-overlay)
         border-radius: 20px
 
