@@ -23,8 +23,8 @@ header
   .icon
     fill: var(--color-text)
 
-#content:not(.portfolio,.research-thumbnail)
-  img :not(figure)
+#content:not(.portfolio, .research-thumbnail)
+  img:not(figure)
     width: 110%
     display: block
     margin: 0 -5%
@@ -235,27 +235,6 @@ figure img
       @include smartphone
         .img-overlay
           display: none
-
-        .publication-container
-          display: block
-          opacity: 1
-          width: 100%
-          padding: 10px
-          color: var(--color-text)
-
-          h4
-            font-size: $font-size_h4
-            line-height: $line-height_main
-
-            span
-              background-image: linear-gradient(180deg, transparent 60%, var(--color-highlight) 0)
-              padding: 0 0.2em
-
-          p, h4
-            text-align: left
-            margin-bottom: 0
-            margin-top: 0
-            position: relative
 
         &:hover
           .publication-container
