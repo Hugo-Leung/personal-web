@@ -1,0 +1,13 @@
+{{ $page := .page }}
+{{ $current := .current }}
+
+{{ if $page.Parent }}
+  {{ partial "breadcrumbnav" (dict "page" $page.Parent "current" $current) }}
+{{ else if not $page.IsHome }}
+  {{ partial "breadcrumbnav" (dict "page" $page.Site.Home "current" $current) }}
+{{ end }}
+
+<span{{ if eq $page $current }} class="active"{{ end }}>
+  <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+  {{ if ne $page $current }} / {{ end }}
+</span>
